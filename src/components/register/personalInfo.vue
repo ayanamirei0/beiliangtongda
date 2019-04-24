@@ -158,7 +158,7 @@ export default {
     // this.toGetFaceRecognition();
   },
   destroyed() {
-    window.location.reload();
+    window.location.reload();   //通过刷新页面关闭摄像头
   },
   methods: {
     toShowFaceScan() {
