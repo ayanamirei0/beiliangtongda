@@ -6,7 +6,7 @@
       <Title title="企业信息"></Title>
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="ruleForm">
         <el-form-item label="注册类型" label-width="140" prop="type">
-          <el-select v-model="ruleForm.type" placeholder="请选择活动区域">
+          <el-select v-model="ruleForm.type" placeholder="请选择注册类型">
             <el-option
               v-for="(item,index) of enterpriseType"
               :key="index"
@@ -32,7 +32,7 @@
           </el-input>
         </el-form-item>
         <el-form-item ref="nameForm" label="公司名称" label-width="140" prop="name">
-          <el-input @focus="toNone('nameForm')" v-model="ruleForm.name" placeholder="请按照营业执照填写"></el-input>
+          <el-input @focus="toNone('nameForm')" v-model="ruleForm.name" placeholder="请输入公司名称"></el-input>
         </el-form-item>
         <el-form-item ref="addressForm" label="公司地址" label-width="140" prop="address">
           <area-cascader

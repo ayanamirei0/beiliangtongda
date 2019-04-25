@@ -205,6 +205,7 @@ export default {
     detect(faceUrl) {
       //  人脸检测
       detect(faceUrl).then(res => {
+          console.log(res,'人脸识别检测');
         if (res.returnCode === 200) {
           this.faceImgArr.push(faceUrl);
           this.errFaceImg = "";
@@ -226,6 +227,16 @@ export default {
       tracking.track("#video", tracker, { camera: true });  //开启摄像头
       tracker.on("track", function(event) {
         context.clearRect(0, 0, canvas.width, canvas.height);
+        setTimeout(() => {      //检测是否有有人脸
+            switch (event.data.length) {
+                case 0:
+                    _this.errFaceImg = '摄像头未检测到人脸';
+                    _this.cancel();
+                    break;
+                default:
+                    break;
+            }
+        }, 3000);
         event.data.forEach(function(rect) {
           while (i >= 0) {
             canvas
