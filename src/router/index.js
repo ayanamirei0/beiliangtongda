@@ -18,7 +18,7 @@ const chairman = r => require.ensure([], () => r(require('@/pages/aboutUs/chairm
 const partner = r => require.ensure([], () => r(require('@/pages/aboutUs/partner')), 'partner') //业务合作伙伴
 const structure = r => require.ensure([], () => r(require('@/pages/aboutUs/structure')), 'structure') //组织架构
 const prospect = r => require.ensure([], () => r(require('@/pages/aboutUs/prospect')), 'prospect') //发展愿景
-const emptyUs = r => require.ensure([], () => r(require('@/pages/aboutUs/emptyUs')), 'prospect') //发展愿景
+const emptyUs = r => require.ensure([], () => r(require('@/pages/aboutUs/emptyUs')), 'emptyUs') //发展愿景
 
 //  注册
 const register = r => require.ensure([], () => r(require('@/pages/register/register')), 'register')

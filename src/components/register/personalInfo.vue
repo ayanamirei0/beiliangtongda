@@ -158,7 +158,7 @@ export default {
     // this.toGetFaceRecognition();
   },
   destroyed() {
-    window.location.reload();   //通过刷新页面关闭摄像头
+    window.location.reload();
   },
   methods: {
     toShowFaceScan() {
@@ -233,7 +233,7 @@ export default {
               .drawImage(video, 0, 0, canvas.width, canvas.height);
             // _this.imgDataBase64Str = canvas.toDataURL();
 
-            _this.detect(canvas.toDataURL());   //toDataURL方法实时的将视频截成Base64图片编码
+            _this.detect(canvas.toDataURL());   
 
             i--;
           }

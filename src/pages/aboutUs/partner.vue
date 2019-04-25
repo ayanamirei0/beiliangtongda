@@ -10,6 +10,7 @@
     <div class="partner_banner"><img :src="banner"></div>
     <div class="partner_cont">
       <div class="abt_ct">
+      	<span></span>
         <p>{{partner.cont}}</p>
       </div>
     </div>
@@ -49,9 +50,9 @@ export default {
     top;
   width: 100%;
   background-size: cover;
-  height: 315px;
+  height: 384px;
   text-align: center;
-  padding-top: 285px;
+  padding-top: 216px;
   -webkit-box-sizing: initial;
 }
 .partner_banner img {
@@ -66,23 +67,41 @@ export default {
 .abt_ct {
   position: relative;
   overflow: hidden;
-  background: url("../../assets/images/about/partner_bg.jpg") no-repeat right
-    top;
   height: 518px;
-  width: 100%;
+  width: 1200px;
   margin: 80px 0px 130px;
+  background: url("../../assets/images/about/partner_bg.jpg") no-repeat center center;
+  background-size: 1200px 518px;
+  transition: all 0.3s ease;
+}
+.abt_ct:hover{
+	background-size: 1320px 570px;
+}
+.abt_ct span{
+	display: block;
+	background: #FFFFFF;
+	opacity: 0.8;
+	width: 1200px;
+	height: 243px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 2;
 }
 .abt_ct p {
+background: url("../../assets/images/about/p_title.png") no-repeat center top;
   display: inline-block;
-  color: #666666;
   font-size: 16px;
   width: 730px;
   color: #666666;
   line-height: 30px;
   position: absolute;
   right: 226px;
-  top: 394px;
+  top: 320px;
+  padding-top: 70px;
+  z-index: 4;
   font-family: PingFangSC;
+  height: 200px;
 }
 </style>
 

@@ -49,9 +49,9 @@ export default {
     top;
   width: 100%;
   background-size: cover;
-  height: 315px;
+  height: 384px;
   text-align: center;
-  padding-top: 285px;
+  padding-top: 216px;
   -webkit-box-sizing: initial;
 }
 .intro_banner img {
@@ -65,13 +65,18 @@ export default {
 }
 .abt_ct {
   position: relative;
-  overflow: hidden;
-  background: url("../../assets/images/about/intro_bg.jpg") no-repeat right top;
-  height: 545px;
-  width: 100%;
-  margin: 80px 0px 130px;
+  height: 490px;
+  width: 1200px;
+  margin: 130px 0px 130px;
+  background: url("../../assets/images/about/intro_bg1.jpg") no-repeat center center;
+  background-size:1200px 500px;
+  transition: all 0.3s ;
+}
+.abt_ct:hover{
+	background-size:1320px 545px;
 }
 .abt_ct p {
+	background: url("../../assets/images/about/intro_bg.jpg") no-repeat  center top;
   display: inline-block;
   color: #666666;
   font-size: 14px;
@@ -80,8 +85,11 @@ export default {
   line-height: 24px;
   position: absolute;
   right: 180px;
-  top: 250px;
+  top: -50px;
+  padding: 245px 50px 0px;
+  height: 295px;
   font-family: PingFangSC;
+  -webkit-box-sizing: initial;
 }
 </style>
 

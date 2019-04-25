@@ -28,9 +28,7 @@ export default {
     Header,
     Footer
   },
-  created() {
-
-  },
+  created() {},
   methods: {}
 };
 </script>
@@ -48,7 +46,8 @@ export default {
 .emptyBg {
   width: 100%;
   height: 880px;
-  background: url(../../assets/images/emptyBg.png) no-repeat 100% 100%;
+  background: url(../../assets/images/emptyBg.png) no-repeat;
   background-size: cover;
+  background-position: center center;
 }
 </style>

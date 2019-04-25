@@ -198,7 +198,6 @@ export const forgetPwd = (newpwd, confirmPassword, phone, phoneCode) => $http(ro
     newpwd,
     confirmPassword,
     phone,
-    phone,
     phoneCode
 });
 

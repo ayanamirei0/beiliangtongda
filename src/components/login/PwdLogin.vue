@@ -66,7 +66,7 @@ export default {
   },
   created() {
 
-  }  ,
+  },
   methods: {
       toNone(formName){
           this.$refs[formName].resetField();

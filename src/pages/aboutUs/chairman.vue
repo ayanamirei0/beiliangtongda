@@ -18,6 +18,7 @@
         </ul>
         <p>
           <span>{{chairman_name}}</span>
+          <b><img src="../../assets/images/about/chair_image3.jpg" /></b>
         </p>
       </div>
     </div>
@@ -63,9 +64,9 @@ export default {
     top;
   width: 100%;
   background-size: cover;
-  height: 315px;
+  height: 384px;
   text-align: center;
-  padding-top: 285px;
+  padding-top: 216px;
   -webkit-box-sizing: initial;
 }
 .chairman_banner img {
@@ -94,6 +95,7 @@ export default {
   z-index: 2;
 }
 .abt_ct p span {
+	position: absolute;
   display: block;
   font-size: 30px;
   line-height: 80px;
@@ -101,6 +103,37 @@ export default {
   width: 180px;
   margin: 20px 0px 0px 60px;
   color: #c29b73;
+  z-index: 4;
+  background: #FFFFFF;
+}
+.abt_ct p span:before{
+	content: "";
+	display: inline-block;
+	width: 124px;
+	height: 4px;
+	background: #C29B73;
+	position: absolute;
+	bottom: 0px;
+	right: 25px;
+}
+.abt_ct p b{
+	display: inline-block;
+	widows: 300px;
+	height: 443px;
+	overflow: hidden;
+	position: absolute;
+	z-index: 3;
+	right: 33px;
+	top: 0px;
+}
+.abt_ct p b img{
+	transition: 0.3s all ease;
+	width: 100%;
+	height: 100%;
+}
+.abt_ct p img:hover{
+	
+  transform: scale(1.1);
 }
 .abt_ct ul {
   width: 617px;

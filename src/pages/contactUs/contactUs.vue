@@ -55,7 +55,7 @@ import Footer from "components/Footer";
 
 <style lang="scss" scoped type="text/scss">
 .about_banner {
-	background: url("../../assets/images/about_banner.png") no-repeat center top;
+	background: url("../../assets/images/about_banner.jpg") no-repeat center top;
 	width: 100%;
 	background-size: cover;
 	height: 600px;

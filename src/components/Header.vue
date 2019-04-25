@@ -384,7 +384,7 @@ $colorW: #ffffff;
   }
 }
 .header-right-wrap {
-  width: 340px;
+  width: 360px;
   margin-top: 23px;
   .btn {
     color: #ffffff;
@@ -399,9 +399,8 @@ $colorW: #ffffff;
     display: inline-block;
     text-align: center;
   }
-  .btngoback {
-    width: 136px;
-    height: 34px;
+  .btngoback{
+    width:140px;
   }
   .btn-left {
     margin-right: 16px;

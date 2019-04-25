@@ -137,7 +137,7 @@ export default {
     height: 600px;
     background-color: pink;
     background: url(../../assets/images/news/banner.jpg) no-repeat center center;
-    background-size: 100% 100%;
+    background-size: cover;
   }
   .content {
     width: 1200px;

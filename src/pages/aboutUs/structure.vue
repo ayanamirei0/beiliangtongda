@@ -46,9 +46,9 @@ export default {
     top;
   width: 100%;
   background-size: cover;
-  height: 315px;
+  height: 384px;
   text-align: center;
-  padding-top: 285px;
+  padding-top: 216px;
   -webkit-box-sizing: initial;
 }
 .structure_banner img {

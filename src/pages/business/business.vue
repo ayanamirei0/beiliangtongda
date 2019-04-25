@@ -37,8 +37,9 @@
             <p>BUSINESS OBJECTIVES</p>
           </h2>
           <dl>
-            <dt>业务目标<span></span></dt>
+            <dt></dt>
             <dd>
+            	<h2>业务目标<span></span></h2>
               <p>三年内实现粮贸交易量500万吨/年，粮食贸易金额超100亿，逐步成为天津自贸区内粮食贸易物流龙头企业，及国内最大的粮贸民营企业。</p>
               <p>拓展粮贸进口业务，发展成为专业国际粮贸大宗经营商。致力于推进农业产业化发展，实现全产业链可控制、可追溯机制。</p>
             </dd>
@@ -127,15 +128,23 @@ export default {
 }
 .business_ct1 dl dt {
 	position: absolute;
-  background: url("../../assets/images/business/businessOverview_img1.png") no-repeat center center;
+  background: url("../../assets/images/business/businessOverview_img1.jpg") no-repeat center center;
   background-size: 800px 560px;
   transition: 0.5s all ease;
   height: 560px;
   width: 795px;
-  overflow: hidden;
+}
+.business_ct1 dl dt:after{
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 180px;
+	background: #C29B73;
+	position: absolute;
+	right: -20px;
 }
 .business_ct1 dl dt:hover{
-	background-size: 950px 665px;
+	background-size: 880px 620px;
 	
   /*transform: scale(1.1);*/
 }
@@ -225,34 +234,55 @@ export default {
   margin-top: 80px;
 }
 .business_ct3 dl {
-  background: url("../../assets/images/business/businessOverview_img5.png")
-    no-repeat right top;
-  height: 420px;
-  padding: 140px 0px 0px 20px;
-  width: 1180px;
+	height: 560px;
+  width: 1200px;
   -webkit-box-sizing: initial;
   color: #333333;
+  position: relative;
 }
 .business_ct3 dl dt {
+  background: url("../../assets/images/business/businessOverview_img5.jpg") no-repeat center center;
+  background-size: 680px 560px;
+  height:560px;
+  width: 680px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  transition:0.3s all ease;
+}
+.business_ct3 dl dt:after{
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 166px;
+	background: #C29B73;
+	position: absolute;
+	left: -20px;
+}
+.business_ct3 dl dt:hover{
+	background-size: 748px 616px;
+}
+.business_ct3 dl dd {
   width: 362px;
+  font-size: 18px;
+  line-height: 30px;
+  position: absolute;
+}
+.business_ct3 dl dd h2{
+	width: 362px;
   font-size: 42px;
   height: 70px;
   line-height: 40px;
   position: relative;
   margin-bottom: 50px;
 }
-.business_ct3 dl dt span {
+.business_ct3 dl dd h2 span {
   background: #c29b73;
   width: 40px;
   height: 8px;
   position: absolute;
   left: 0px;
   bottom: 0px;
-}
-.business_ct3 dl dd {
-  width: 362px;
-  font-size: 18px;
-  line-height: 30px;
 }
 .business_ct3 dl dd p {
   margin-bottom: 30px;

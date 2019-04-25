@@ -18,6 +18,7 @@
       :show-file-list="false"
       :limit="limitNum"
       :on-exceed="exceedFile"
+      :file-list="fileList"
       drag
     >
       <div>
@@ -58,7 +59,8 @@ export default {
       loading: false,
       dataFile: {},
       action: "",
-      form: {}
+      form: {},
+      fileList: []
     };
   },
   created() {
@@ -81,7 +83,7 @@ export default {
     },
 
     // 文件超出个数限制时的钩子
-    exceedFile(files) {
+    exceedFile(files, fileList) {
       this.$notify.warning({
         title: "警告",
         message: `只能选择 ${this.limitNum} 个文件，当前共选择了 ${
@@ -95,28 +97,31 @@ export default {
     },
 
     // 上传文件之前的钩子, 参数为上传的文件,若返回 false 或者返回 Promise 且被 reject，则停止上传
-    beforeUploadFile(file) {
+    beforeUploadFile(file, fileList) {
       this.dataFile = {
         file: "file"
       };
       this.loading = true;
       let extension = file.name.substring(file.name.lastIndexOf(".") + 1);
       let size = file.size / 1024 / 1024;
-      if (extension !== "xlsx" && extension !== "xls") {   
+      if (extension !== "xlsx" && extension !== "xls") {
         this.$notify.warning({
           title: "警告",
           message: `只能上传Excel（即后缀是.xlsx或.xls）的文件`
         });
+        this.loading = false;
+        return false;
       }
       if (size > 10) {
         this.$notify.warning({
           title: "警告",
           message: `文件大小不得超过10M`
         });
+        return false;
       }
     },
     // 文件上传成功时的钩子
-    handleSuccess(res, file) {
+    handleSuccess(res, file, fileList) {
       this.loading = false;
       this.$notify.success({
         title: "成功",
@@ -137,18 +142,16 @@ export default {
         if (res.returnCode == 200) {
         }
       });
-
       this.$refs["uploadExcel"].clearFiles();
     },
     // 文件上传失败时的钩子
-    handleError(err, file) {
+    handleError(err, file, fileList) {
       this.loading = false;
       this.$notify.error({
         title: "错误",
         message: `文件上传失败`
       });
-    },
-    userSave() {}
+    }
   },
   mounted() {
     //请求数据
@@ -158,6 +161,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../common/style/mixin";
 .upload {
   position: relative;
 }
@@ -202,9 +206,11 @@ export default {
       top: 204px;
       left: 0;
       span {
+        width: 490px;
         padding-left: 37px;
         font-size: 24px;
         color: #fff;
+        @include ellipsis2(1);
       }
     }
   }

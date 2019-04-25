@@ -4,7 +4,7 @@
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
       <el-form-item ref="accountForm" prop="account">
         <p>请输入手机号</p>
-        <el-input @focus="toNone('accountForm')" v-model="ruleForm.account"></el-input>
+        <el-input @focus="toNone('accountForm')" maxlength="11" v-model="ruleForm.account"></el-input>
       </el-form-item>
       <div class="slider">
         <p>请按住滑块,拖动到最右边</p>

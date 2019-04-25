@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
-        <span>ADD：天津自贸试验区（东疆保税港区）乐山道200号铭海中心2号楼-5、6-702</span>      
-        <span>TEL：010-6800000<i>|</i>FAX：010-6800000<i>|</i>Email：0000@aaaa.com<i>|</i>京ICP备06000000号</span>        
+        <span>ADD：天津自贸试验区（东疆保税港区）乐山道200号铭海中心2号楼-5、6-702</span>
+        <span>TEL：022-65827977<i>|</i>Email：service@beilianggroup.com<i>|</i>津ICP备19000883号-1</span>
     </div>
 </template>
 
@@ -15,10 +15,10 @@
         },
         mounted(){
             window.addEventListener('scroll', this.handleScroll, true)
-            
+
         },
         methods: {
-            
+
         }
     }
 </script>
@@ -46,6 +46,6 @@
             }
         }
     }
-   
-	
+
+
 </style>

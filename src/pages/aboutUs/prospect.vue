@@ -8,7 +8,7 @@
     <div class="prospect_cont">
         <div class="abt_ct">
         	<div class="prospect_ct1">
-        		<img :src="prospect.ptimg1" class="img">
+        		<div class="img_left"><p><img :src="prospect.ptimg1" class="img"></p></div>
         		<dl>
         			<dt><img src="../../assets/images/about/prospect_tit1.png"></dt>
         			<dd>
@@ -23,6 +23,8 @@
         		</dl>
         	</div>
         	<div class="prospect_ct2">
+        		<b class="cancelBtn_b1"><img src="../../assets/images/about/prospect_img5.jpg"></b>
+        		<b class="cancelBtn_b2"><img src="../../assets/images/about/prospect_img6.jpg"></b>
         		<h3>{{prospect1.title}}</h3>
         		<p>{{prospect1.cont1}}</p>
         		<ul>
@@ -35,7 +37,12 @@
         	</div>
         	<div class="prospect_ct3">
         		<h2><img :src="prospect2.title_img"></h2>
-        		<img :src="prospect2.img">
+        		<ul class="img_list">
+        			<li><img src="../../assets/images/about/pt_image1.jpg"></li>
+        			<li><img src="../../assets/images/about/pt_image2.jpg"></li>
+        			<li><img src="../../assets/images/about/pt_image3.jpg"></li>
+        			<li><img src="../../assets/images/about/pt_image4.jpg"></li>
+        		</ul>
         		<h3>{{prospect2.title}}<span></span></h3>
         		<p>{{prospect2.cont}}</p>
         		<ul class="list_prospect_ct3">
@@ -43,6 +50,7 @@
         		</ul>
         	</div>
         	<div class="prospect_ct4">
+        		<p><img src="../../assets/images/about/prospect_img7.jpg"></p>
         		<dl>
         			<dd>
         				<h3>{{prospect3.title}}</h3>
@@ -55,7 +63,7 @@
         	<div class="prospect_ct5">
         		<h2><img :src="prospect4.tiele_img"></h2>
         		<p>{{prospect4.cont}}</p>
-        		<img class="img" :src="prospect4.img">
+        		<span><b><img class="img" :src="prospect4.img"></b></span>
         	</div>
         </div>
     </div>
@@ -78,7 +86,7 @@ import Footer from "components/Footer";
 							navColor:"white",
             	prospect_banner:require("../../assets/images/about/image3.png"),
 							prospect:{
-								ptimg1:require("../../assets/images/about/prospect_img1.png"),
+								ptimg1:require("../../assets/images/about/prospect_tit11.jpg"),
 								title:"建设新型流通业态，促进城乡消费便捷化。",
 								list1:[
 									"三年内粮贸交易量达到500万吨每年，粮食贸易金额超100亿。",
@@ -133,7 +141,7 @@ import Footer from "components/Footer";
             	prospect4:{
             		tiele_img:require("../../assets/images/about/prospect_tit5.png"),
             		cont:"以市场为导向，以经济效益为中心，以粮食产业为重点，优化组合各种生产要素，实行区域化布局、专业化生产、规模化建设、系列化加工、社会化服务、企业化管理，形成一体化经营体系，使粮食产业走上自我发展、自我积累、自我约束、自我调节的良性发展轨道。",
-            		img:require("../../assets/images/about/prospect_img2.png"),
+            		img:require("../../assets/images/about/prospect_img8.jpg"),
             	}
             }
         },
@@ -154,11 +162,33 @@ import Footer from "components/Footer";
 	overflow: hidden;
 	font-family: PingFangSC;
 }
-.prospect_ct1 .img{
-	width: 273px;
+.img_left{
 	float: left;
 	margin-top: 50px;
+	width: 273px;
+	background: url("../../assets/images/about/prospect_img1.png") no-repeat left top;
+	padding: 20px 0px 0px 20px;
 }
+.img_left p{
+	width: 252px;
+	height: 328px;
+	overflow: hidden;
+}
+.prospect_ct1 .img{
+	transition: all 0.3s ease;
+}
+.prospect_ct1 .img:hover{
+  transform: scale(1.1);
+}
+
+.prospect_ct4 p img,.prospect_ct5 b img,.prospect_ct3 ul.img_list li img,.prospect_ct2 b img{
+		transition: 0.3s all ease;
+}
+.prospect_ct4 p img:hover,.prospect_ct5 b img:hover,.prospect_ct3 ul.img_list li img:hover,.prospect_ct2 b img:hover{
+  transform: scale(1.1);
+}
+
+
 .prospect_ct1 dl{
 	width: 700px;
 	float: right;
@@ -225,7 +255,28 @@ import Footer from "components/Footer";
 	-webkit-box-sizing:initial;
 	font-family: PingFangSC;
 	color: #666666;
+	position: relative;
 }
+.prospect_ct2 b{
+	display: block;
+	position: absolute;
+	
+}
+.prospect_ct2 b.cancelBtn_b1{
+	left: 115px;
+	top: 215px;
+	width: 232px;
+	height: 268px;
+	overflow: hidden;
+}
+.prospect_ct2 b.cancelBtn_b2{
+	right: 126px;
+	bottom: 56px;
+	width: 218px;
+	height: 233px;
+	overflow: hidden;
+}
+
 .prospect_ct2 h3{
 	font-size: 18px;
 	height: 44px;
@@ -250,8 +301,21 @@ import Footer from "components/Footer";
 	text-align: center;
 	margin-bottom: 50px;
 }
+
 .prospect_ct3 p,.prospect_ct3 ul{
 	width: 770px;
+}.prospect_ct3 ul.img_list{
+	width: 963px;
+	height: 188px;
+}
+.prospect_ct3 ul.img_list li{
+	float: left;
+	width: 233px;
+	margin-right: 10px;
+	overflow: hidden;
+}
+.prospect_ct3 ul.img_list li:nth-child(4){
+	margin-right: 0px;
 }
 .prospect_ct3 p{
 	margin: 23px 0px 30px;
@@ -266,6 +330,15 @@ import Footer from "components/Footer";
 	-webkit-box-sizing:initial;
 	font-family: PingFangSC;
 	color: #666666;
+	position: relative;
+}
+.prospect_ct4 p{
+	position: absolute;
+	width: 294px;
+	height: 320px;
+	overflow: hidden;
+	left: 124px;
+	bottom: 79px;
 }
 .prospect_ct4 h3{
 	font-size: 18px;
@@ -281,6 +354,22 @@ import Footer from "components/Footer";
 	font-family: PingFangSC;
 	color: #666666;
 	overflow: hidden;
+	position: relative;
+	height: 452px;
+}
+.prospect_ct5 span{
+	display: block;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	background: url("../../assets/images/about/prospect_img2.png") no-repeat center top;
+	padding: 0px 20px 0px 0px;
+}
+.prospect_ct5 b{
+	display: block;
+	width: 410px;
+	height: 298px;
+	overflow: hidden;
 }
 .prospect_ct5 h2{
 	text-align: center;
@@ -290,17 +379,14 @@ import Footer from "components/Footer";
 	width: 443px;
 	margin-top: 92px;
 }
-.prospect_ct5 .img{
-	float: right;
-	margin-top: 50px;
-}
+
 .prospect_banner {
 	background: url("../../assets/images/about/intro_banner.png") no-repeat center top;
 	width: 100%;
 	background-size: cover;
-	height: 315px;
+	height: 384px;
 	text-align: center;
-	padding-top: 285px;
+	padding-top: 216px;
 	-webkit-box-sizing:initial;
 }
 .prospect_banner img{

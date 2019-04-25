@@ -8,9 +8,8 @@
       </div>
       <div class="footer-mid clearfix">
         <div class="fl">
-          <p>TEL：010-6800000</p>
-          <p>FAX：010-6800000</p>
-          <p>Email：0000@aaaa.com</p>
+          <p>TEL：022-65827977</p>
+          <p>Email：service@beilianggroup.com</p>
           <h4>ADD：</h4>
           <p>天津自贸试验区（东疆保税港区）乐山道200号铭海中心2号楼-5、6-702</p>
         </div>
@@ -18,7 +17,7 @@
       </div>
       <div class="footer-bot">
         <div class="line"></div>
-        <p>京ICP备06000000号</p>
+        <p>津ICP备19000883号-1</p>
       </div>
     </div>
   </div>
