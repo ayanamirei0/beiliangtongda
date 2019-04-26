@@ -112,7 +112,15 @@ export default {
         }
     },
     mounted() {
+    },
+    destroyed() {
+        sessionStorage.removeItem("account")
+        sessionStorage.removeItem("password")
+        sessionStorage.removeItem("mobile")
+        sessionStorage.removeItem("code")
+        location.reload()
     }
+
 };
 </script>
 

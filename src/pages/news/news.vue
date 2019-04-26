@@ -3,13 +3,16 @@
     <div class="header_content">
       <Header :currentIndex="currentIndex" :navColor="navColor"></Header>
     </div>
-    <div class="content">
+    <div id="newGroup" class="router_postion"><div id="newIndustry" class="router_postion"></div></div>
+    
+    <div class="content" >
       <div class="news_img">
         <img src="../../assets/images/news/new-img.png" alt>
+        <div class="bg"></div>
       </div>
-      <div class="news_txt">
+      <div class="news_txt" >
         <div class="new_title clearfix">
-          <span :class="{ 'fl': true, 'active': isB}" @click.stop="change('hyxw', 1)">行业新闻</span>
+          <span :class="{ 'fl': true, 'active': isB}" @click.stop="change('hyxw', 1)" >行业新闻</span>
           <span :class="{ 'fl': true, 'active': !isB}" @click.stop="change('jtxw', 1)">集团新闻</span>
         </div>
         <ul>
@@ -73,6 +76,7 @@ export default {
         if(this.$route.query.id == 'newGroup'){
           this.main = 'jtxw'
           this.change('jtxw', 1);
+
         }
       if(this.$route.query.id == 'newIndustry'){
           this.main = 'hyxw'
@@ -134,16 +138,40 @@ export default {
   flex-direction: column;
   position: relative;
   .header_content {
-    height: 600px;
+    height: 440px;
     background-color: pink;
     background: url(../../assets/images/news/banner.jpg) no-repeat center center;
     background-size: cover;
   }
+  .router_postion{
+    height:85px;
+  }
   .content {
     width: 1200px;
     height: 719px;
-    margin: 85px auto;
+    margin: 0 auto 85px;
     position: relative;
+    .news_img {
+        width: 552px;
+        height: 720px;
+        overflow: hidden;
+        position: relative;
+        .bg{
+            width: 13px;
+            height: 141px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #c29b73;
+        }
+    }
+    img {
+        transition: 0.3s all ease;
+    }
+    img:hover {
+    transform: scale(1.1);
+    }
+    
     .news_txt {
       width: 760px;
       height: 588px;
@@ -186,6 +214,7 @@ export default {
         height: 450px;
         li {
           margin-bottom: 20px;
+          background: #FAFAFA;
           .icon-box {
             width: 100px;
             height: 92px;
@@ -214,6 +243,7 @@ export default {
                 line-height: 30px;
                 color: #222;
                 font-size: 18px;
+                margin-top: 10px;
               }
               p {
                 line-height: 24px;

@@ -96,14 +96,14 @@ export default {
 <style lang="scss" scoped type="text/scss">
 .joinpart {
   width: 1200px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 0 auto;
 }
 .warp {
   display: flex;
   flex-direction: column;
   position: relative;
   .header_content {
-    height: 600px;
+    height: 440px;
     background: url(../../assets/images/member/member_banner.jpg) no-repeat
       center top;
     width: 100%;

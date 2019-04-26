@@ -8,11 +8,11 @@
       <!-- <Slider :imgUrl="bannerList"></Slider> -->
     </div>
     <div class="business_banner"></div>
-    <div class="business_cont">
+    <div class="business_cont" id="business1">
       <div class="abt_ct content">
         <div
           class="business_ct1"
-          id="business1"
+          
         >
           <h2 class="b_h2">
             商业模式
@@ -79,9 +79,8 @@ export default {
     no-repeat center top;
   width: 100%;
   background-size: cover;
-  height: 315px;
+  height: 440px;
   text-align: center;
-  padding-top: 285px;
   -webkit-box-sizing: initial;
 }
 .business_banner img {
@@ -95,7 +94,8 @@ export default {
 }
 .abt_ct {
   width: 100%;
-  margin: 80px 0px 130px;
+  padding-top:80px;
+  margin: 0 0px 130px;
 }
 .b_h2 {
   font-size: 48px;

@@ -46,14 +46,14 @@ export default {
     top;
   width: 100%;
   background-size: cover;
-  height: 384px;
+  height: 260px;
   text-align: center;
-  padding-top: 216px;
+  padding-top: 180px;
   -webkit-box-sizing: initial;
 }
 .structure_banner img {
-  width: 1082px;
-  height: 211px;
+  width: 1010px;
+  height: 166px;
 }
 
 .structure_cont {

@@ -68,7 +68,7 @@ export default {
   flex-direction: column;
   position: relative;
   .header_content {
-    height: 600px;
+    height: 440px;
     background-color: pink;
     background: url(../../assets/images/news/banner.jpg) no-repeat center top;
     background-size: cover;

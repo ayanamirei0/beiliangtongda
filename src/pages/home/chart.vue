@@ -73,7 +73,8 @@ export default {
       return {
         title: {
           text: "2017-2018 全国及各省（区、市）" + name + "数据",
-          left: "center"
+          left: "center",
+          top:20
         },
         tooltip: {
           trigger: "item"
@@ -81,7 +82,7 @@ export default {
         legend: {
           orient: "vertical",
           top: "50",
-          left: "left",
+          left: "9%",
           data: ["粮食产量", "播种面积", "单位面积产量"],
           // color: 'red',
           selectedMode: "single",
@@ -94,7 +95,7 @@ export default {
         visualMap: {
           min: min,
           max: max,
-          left: "left",
+          left: "9%",
           top: "bottom",
           text: [name, "单位：" + unit], // 文本，默认为数值文本
           calculable: true,
@@ -593,6 +594,7 @@ export default {
 
 <style lang="scss" scoped>
 .charts{
+  // background:#07213a;
   &.close{
     height: 0!important;
     overflow: hidden;

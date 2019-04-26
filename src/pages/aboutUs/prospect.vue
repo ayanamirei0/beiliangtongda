@@ -84,7 +84,7 @@ import Footer from "components/Footer";
             return {
 							currentIndex:4,
 							navColor:"white",
-            	prospect_banner:require("../../assets/images/about/image3.png"),
+            	prospect_banner:require("../../assets/images/about/image2.png"),
 							prospect:{
 								ptimg1:require("../../assets/images/about/prospect_tit11.jpg"),
 								title:"建设新型流通业态，促进城乡消费便捷化。",
@@ -384,14 +384,14 @@ import Footer from "components/Footer";
 	background: url("../../assets/images/about/intro_banner.png") no-repeat center top;
 	width: 100%;
 	background-size: cover;
-	height: 384px;
+	height: 260px;
 	text-align: center;
-	padding-top: 216px;
+	padding-top: 180px;
 	-webkit-box-sizing:initial;
 }
 .prospect_banner img{
-	width: 919px;
-	height: 211px;
+	width: 788px;
+	height: 167px;
 }
 
 .prospect_cont {

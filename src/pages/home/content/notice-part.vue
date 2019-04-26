@@ -28,6 +28,7 @@
       class="news"
       v-if="notice"
     >
+    <div class="news_first">
       <h3 @click="noticeDetail(notice[0].id)">{{notice[0].title}}</h3>
       <p
         class="time"
@@ -39,6 +40,7 @@
         class="infom"
         @click="noticeDetail(notice[0].id)"
       >{{this.notice[0].introduction}}</p>
+      </div>
       <ul>
         <li
           v-for="(item,index) in notice.slice(1, 5)"
@@ -150,6 +152,7 @@ img:hover {
     padding-top: 12px;
     color: $color6;
     border-bottom: 1px solid $color8;
+    font-family:"宋体"
   }
 }
 .content {
@@ -370,6 +373,9 @@ img:hover {
     }
     .news {
       width: 585px;
+      .news_first{
+        height:130px;
+      }
       h3 {
         line-height: 50px;
         @include ellipsis2(2);
@@ -443,7 +449,7 @@ img:hover {
         .img-txt {
           width: 120px;
           height: 44px;
-          line-height: 44px;
+          line-height: 46px;
           font-size: 18px;
           left: unset;
           right: 0;

@@ -1,9 +1,9 @@
 <template>
-  <div class="content">
+  <div class="content" id="memberWork">
     <!-- 网上办事 -->
     <div
       class="part online"
-      id="memberWork"
+      
     >
       <div class="title">
         <span>网上办事</span>
@@ -228,7 +228,8 @@ $colorW: #ffffff;
 }
 .content {
   width: 1200px;
-  margin: 0 auto;
+  padding-top:100px;
+  margin: 0 auto 0;
 }
 .online {
   .online-box {

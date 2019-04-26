@@ -156,6 +156,7 @@ img:hover {
     padding-top: 12px;
     color: $color6;
     border-bottom: 1px solid $color8;
+    font-family: "宋体";
   }
 }
 .content {
@@ -182,6 +183,8 @@ img:hover {
           }
           .img-mask {
             background-color: rgba(180, 136, 86, 0.65);
+            box-shadow: 0px 1px 4px rgba(0,0,0,0.2),
+				0px 0px 20px rgba(0,0,0,0.1) inset;
           }
           .img-txt2 {
             color: #fff;

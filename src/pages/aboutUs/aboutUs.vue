@@ -35,7 +35,7 @@ export default {
         cont:
           "北粮集团于2018年11月在天津东疆港自贸区注册成立，注册资本金8亿元人民币，主要从事粮食贸易、仓储、物流及综合金融服务。北粮集团瞄准中国一流粮贸企业，秉承“创新 品质 品格”的经营理念，以投控方式形成固定资产，以杠杆方式参与大宗粮贸，围绕重点区域开展业务战略布局，为打造粮贸投控企业的业务关系网赋能。通过粮贸、资本、品牌三大拉动，提高统筹利用国际国内两个市场、两种资源的能力，在粮食贸易和北粮南运领域开发创新性金融产品，提升粮贸产业链价值，强化资源的综合利用，为推动中国粮油行业发展做贡献，创造共享价值实现合作共赢。"
       },
-      banner: require("../../assets/images/about/image1.png"),
+      banner: require("../../assets/images/about/image4.png"),
     };
   },
   methods: {},
@@ -49,14 +49,14 @@ export default {
     top;
   width: 100%;
   background-size: cover;
-  height: 384px;
+  height: 260px;
   text-align: center;
-  padding-top: 216px;
+  padding-top: 180px;
   -webkit-box-sizing: initial;
 }
 .intro_banner img {
-  width: 968px;
-  height: 211px;
+  width: 767px;
+  height: 166px;
 }
 
 .intro_cont {

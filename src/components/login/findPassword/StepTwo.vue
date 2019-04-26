@@ -69,6 +69,7 @@
                         let code =  sessionStorage.getItem("code")
                         forgetPwd(this.ruleForm.newPassword,this.ruleForm.nextNewPassword,mobile,code).then(res => {
                             if (res.returnCode === 200) {
+                                this.$message.success('处理成功');
                                 this.$emit("toFindPwdSuccess");
                             } else {
                                 if (res.message != null && res.message.length > 0) {

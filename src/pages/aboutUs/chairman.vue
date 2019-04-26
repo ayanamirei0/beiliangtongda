@@ -38,7 +38,7 @@ export default {
   },
   data() {
     return {
-      banner: require("../../assets/images/about/image2.png"),
+      banner: require("../../assets/images/about/image3.png"),
       chairman: [
         "古往今来，足食都是治国安邦的首善大举。对于拥有14亿人口的中国来说，国家粮食安全战略具有特殊的重要意义。随着全球一体化，国际农产品贸易不断发展，我国也顺应潮流，通过粮食贸易来缓解粮食安全问题。",
         "随着京津冀协同发展重大国家战略的实施，北粮集团在天津东疆港的大力支持下于2018年正式成立。北粮集团本着打通金融服务粮贸产业的各环节的目标，支持重点领域特色农产品贸易，延伸粮贸产业化链条，助力农业价值和效益提高，致力于成为国内一流大宗农产品服务商。",
@@ -64,14 +64,14 @@ export default {
     top;
   width: 100%;
   background-size: cover;
-  height: 384px;
+  height: 260px;
   text-align: center;
-  padding-top: 216px;
+  padding-top: 180px;
   -webkit-box-sizing: initial;
 }
 .chairman_banner img {
-  width: 859px;
-  height: 211px;
+  width: 735px;
+  height: 166px;
 }
 
 .chairman_cont {

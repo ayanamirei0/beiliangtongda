@@ -17,13 +17,13 @@
                 <template v-if="dataImg[dataImg.length - 1]">
                   {{(dataImg[dataImg.length - 1].title)}}
                 </template>
-                
+
               </template>
               <template v-else>
                 <template v-if="dataImg[thiswiperIndex - 1]">
                   {{(dataImg[thiswiperIndex - 1].title)}}
                 </template>
-                  
+
               </template> -->
                 {{(thiswiperIndex -1 ) == -1 ? (dataImg[dataImg.length - 1].title): (dataImg[thiswiperIndex - 1].title)}}
             </h3>
@@ -43,13 +43,13 @@
                 <template v-if="dataImg[0]">
                   {{(dataImg[0].title)}}
                 </template>
-                
+
               </template>
               <template v-else>
                 <template v-if="dataImg[thiswiperIndex + 1]">
                   {{(dataImg[thiswiperIndex + 1].title)}}
                 </template>
-                  
+
               </template>
               </h3> -->
             <!-- <p>下一个Banner内容简介展示下anner内容简介展示一个…</p> -->
@@ -113,8 +113,12 @@ export default {
     var num2 = this;
     this.slider = new Swiper(".swiper-container", {
       autoplay: this.isLoop,
-      speed: 300,
+      speed: 600,
       loop: true,
+      effect : 'fade',
+      fade: {
+        crossFade: true,
+      },
       autoplayDisableOnInteraction: false,
       // observer: true,//修改swiper自己或子元素时，自动初始化swiper
       // observeParents: true,//修改swiper的父元素时，自动初始化swiper
@@ -151,7 +155,7 @@ export default {
     // }
   },
   methods: {
-    
+
   }
 };
 </script>
@@ -230,9 +234,11 @@ export default {
     .center-content {
       position: absolute;
       @include center;
+      // top:40%;
+      height:210px;
       z-index:99;
       background: #fff;
-      width: 484px;
+      width: 474px;
       padding: 0 43px 30px 40px;
       box-shadow: 2px -20px 20px 0px rgba(0, 0, 0, 0.2);
       h3 {
@@ -256,8 +262,11 @@ export default {
   bottom: 0;
   width: 100%;
   height: 100px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   color: #fff;
   z-index: 1;
+  &:hover{
+    background: rgba(0, 0, 0, 0.9);
+  }
 }
 </style>

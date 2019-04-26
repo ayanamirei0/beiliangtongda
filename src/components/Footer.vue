@@ -47,6 +47,7 @@ $color7: #cccccc;
 $color8: #ebebeb;
 $color9: #f8f8f8;
 $colorW: #ffffff;
+$opacity: 0.8;
 .footer {
   height: 400px;
   background-color: #2d2d2d;
@@ -77,10 +78,12 @@ $colorW: #ffffff;
     .footer-mid {
       margin-top: 40px;
       > div {
+        opacity:$opacity;
         color: $colorW;
         font-size: 14px;
         line-height: 24p;
         p {
+          
           &:nth-child(1) {
             margin-top: 6px;
           }
@@ -99,8 +102,8 @@ $colorW: #ffffff;
       width: 100%;
       margin: 0 auto;
       .line {
-        height: 1px;
-        border-bottom: 1px solid $color5;
+        height: 10px;
+        border-bottom: 1px solid #575757;
         margin-top: 44px;
       }
       > p {
@@ -111,9 +114,10 @@ $colorW: #ffffff;
         color: $colorW;
         margin: 0 auto;
         position: relative;
-        top: -10px;
         background-color: #2d2d2d;
+        top: -10px;
         text-align: Center;
+        opacity:$opacity;
       }
     }
   }

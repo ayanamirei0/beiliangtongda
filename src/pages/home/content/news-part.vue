@@ -15,14 +15,14 @@
       </div>
     </div>
     <div class="news">
-        <div @click="toNewsDetail(news[0].id)">
+        <div @click="toNewsDetail(news[0].id)" class="news_first">
             <h3>{{news[0].title}}</h3>
             <p class="time">
                 <i class="time-icon"></i>{{news[0].pushTimeStr}}
             </p>
             <p class="infom">{{news[0].introduction}}</p>
         </div>
-      
+
       <ul>
         <li v-for="(item,index) in news.slice(1, 5)" :key="index" @click="toNewsDetail(item.id)">
           <div class="clearfix">
@@ -49,7 +49,7 @@ export default {
           title: "北粮：财富管理升级，从单一管理",
           time: "2017-08-09"
         },
-        
+
       ]
     };
   },
@@ -58,7 +58,7 @@ export default {
             orgCode: 1013,
             startPage: 1,
             pageSize: 5,
-            typeCodes: ['hyxw']
+            typeCodes: ['hyxw','jtxw']
         }).then(res => {
             this.news = res.result.data
         })
@@ -107,6 +107,7 @@ img:hover {
     padding-top: 12px;
     color: $color6;
     border-bottom: 1px solid $color8;
+    font-family:'宋体'
   }
 }
 .content {
@@ -298,6 +299,9 @@ img:hover {
     }
     .news {
       width: 585px;
+      .news_first{
+        height:130px
+      }
       h3 {
         line-height: 50px;
         @include ellipsis2(2);
@@ -370,7 +374,7 @@ img:hover {
         .img-txt {
           width: 120px;
           height: 44px;
-          line-height: 44px;
+          line-height: 46px;
           font-size: 18px;
           left: unset;
           right: 0;

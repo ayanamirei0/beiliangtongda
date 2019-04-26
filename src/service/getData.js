@@ -62,7 +62,11 @@ export const uploadfile = (file) => $http(root + '/customerweb/user/uploadfile',
 export const detect = (faceUrl) => $http(root + '/customerweb/user/detect', {
     faceUrl
 });
-
+// 判断两张脸是否是同一人接口
+export const match = (faceUrl,faceUrlOther) => $http(root + '/customerweb/user/match',{
+    faceUrl,
+    faceUrlOther
+});
 
 /**
  * 上传人脸接口
@@ -129,12 +133,12 @@ export const register = (params) => $http(root + '/customerweb/user/register', p
  * phone  String  账号
  * password   String  登录密码
  */
+//***********  正确接口   **********/
 export const pwdLogin = (account, password) => $http(root + '/customerweb/user/passwordLogin', {
     account,
     password
 });
-
-
+//***********    over     **********/
 /**
  * 短信登录
  * phone  String  手机号

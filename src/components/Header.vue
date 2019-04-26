@@ -1,10 +1,5 @@
-
 <template>
-  <header
-    ref="header"
-    @mouseover="enter"
-    @mouseout="out"
-  >
+  <header ref="header" @mouseover="enter" @mouseout="out">
     <div class="head_nav">
         <router-link
         tag="a"
@@ -12,7 +7,7 @@
         class="logo"
       >
         <img
-          src="../assets/images/header/logo3.png"
+          src="../assets/images/header/logo.png"
           alt="logo"
           id="logo"
         >
@@ -23,8 +18,8 @@
           v-for="(item, index) in navList"
           :to="item.navPath"
           :key="index"
-          :class="[navColor, index == currentIndex? 'active' : '']">
-          <span>{{item.navName}}</span>
+          :class="[navColor, index == currentIndex? 'active' : '']" >
+          <span ref="liactive">{{item.navName}}</span>
           <div
             v-if="item.sub"
             ref="navSecond"
@@ -36,8 +31,7 @@
               v-for="(v, index) in item.sub"
               :key="index"
               :to="{ path: (v.router.indexOf('/')>-1) ? v.router : item.navPath, query: { id: v.router }}"
-              @click.native="selectnav(v.router,item)"
-            >
+              @click.native="selectnav(v.router)">
               <template v-if="v.text!='网上办事'">{{v.text}}</template>
               <template v-else><template v-if="isShow">{{v.text}}</template></template>
             </router-link>
@@ -169,18 +163,15 @@ export default {
             {
               text: "平台公告",
               router: "memberNotice",
-              isMao: true
             },
             {
               text: "加盟合作",
               router: "memberJoin",
-              isMao: true
             },
             {
               text: "网上办事",
               router: "memberWork",
-              isMao: true
-            }
+            },
           ]
         },
         {
@@ -231,7 +222,8 @@ export default {
           navName: "联系我们",
           navPath: "contactUs"
         }
-      ]
+      ],
+      curr_index:this.currentIndex
     };
   },
   watch: {
@@ -250,9 +242,9 @@ export default {
     this.$refs.navSecond.forEach(item => {
       item.style.width = `${this.windowWidth()}px`;
     });
-    this.$nextTick(function() {
-      window.addEventListener("scroll", this.handleScroll);
-    });
+    // this.$nextTick(function() {
+    //   window.addEventListener("scroll", this.handleScroll);
+    // });
     localStorage.removeItem("id");
     this.loginDataDeal();
 
@@ -284,9 +276,13 @@ export default {
     },
     enter() {
       this.$refs.header.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+      if(this.curr_index<6){
+        this.$refs.liactive[this.curr_index].style.color="#c29b73";
+        this.$refs.liactive[this.curr_index].style.borderBottom="solid 2px #c29b73";
+      }
+      
       this.$refs.navSecond.forEach(item => {
         item.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-
         this.$refs.header.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
       });
       // if (item.sub) {
@@ -304,6 +300,11 @@ export default {
       //   });
       // }
       this.$refs.header.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+      if(this.curr_index<6){
+        this.$refs.liactive[this.curr_index].style.color="#fff";
+        this.$refs.liactive[this.curr_index].style.borderBottom="solid 2px #fff";
+      }
+      
       this.$refs.navSecond.forEach(item => {
         item.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
       });
@@ -317,7 +318,14 @@ export default {
           localStorage.clear();
           sessionStorage.clear();
           this.popupShow = false;
-          location.reload();
+          this.isShow=false;
+          var path=this.$router.currentRoute.path;
+          if(path=='/memberOnline'){
+            this.$router.replace('/member');
+          }else{
+            location.reload();
+          }
+          
         } else {
           if (res.message != null && res.message.length > 0) {
             this.$message.error(res.message);
@@ -325,14 +333,20 @@ export default {
         }
       });
     },
-    selectnav(id) {
-      let selectednav = id;
+    selectnav(id_name) {
+      let selectednav = id_name;
       if (this.$route.path == "/home") {
         localStorage.setItem("id", this.$route.query.id);
-        this.handleScroll();
+        var ids=this.$route.query.id;
+        setTimeout(() => {
+          this.handleScroll(id_name);
+        }, 0);
       } else {
         localStorage.setItem("id", selectednav);
-        this.handleScroll();
+        setTimeout(() => {
+          this.handleScroll(id_name);
+        }, 0);
+
       }
     },
     getlocal() {
@@ -342,17 +356,19 @@ export default {
         // anchorElement.scrollIntoView()
       }
     },
-    handleScroll() {
-      let scrollTop =
+    handleScroll(id_index) {
+      if(id_index){
+        let scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      let select = localStorage.getItem("id");
-      if (select) {
-        if (select.indexOf("/") == -1 && document.querySelector("#" + select)) {
-          let offsetTop = document.querySelector("#" + select).offsetTop;
-          document.documentElement.scrollTop = offsetTop;
-          window.removeEventListener("scroll", this.handleScroll);
+        console.log(id_index);
+        if ((typeof(id_index)=='string')&&id_index!=='') {
+          if (id_index.indexOf("/") == -1 && document.querySelector("#" + id_index)) {
+            let offsetTop = document.querySelector("#" + id_index).offsetTop;
+            document.documentElement.scrollTop = offsetTop;
+            window.removeEventListener("scroll", this.handleScroll);
+          }
         }
       }
     }
@@ -360,7 +376,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped="" type="text/scss">
+<style lang="scss" scoped type="text/scss">
 @import "../common/style/mixin";
 $color1: #c29b73;
 $color2: #50a050;
@@ -373,7 +389,7 @@ $color8: #ebebeb;
 $color9: #f8f8f8;
 $colorW: #ffffff;
 .router-link-exact-active {
-  border-bottom: 2px solid #fff;
+  // border-bottom: 2px solid #fff;
   // color: #8f6448;
   width: 84px;
   a {
@@ -391,7 +407,7 @@ $colorW: #ffffff;
     font-size: 14px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 17px;
-    cursor: pointer;
+    cursor:pointer;
     width: 146px;
     height: 34px;
     line-height: 34px;
@@ -446,6 +462,9 @@ header {
         // position: relative;
         span {
           display: block;
+          height:80px;
+          margin:0 auto;
+          width:84px;
         }
         .nav-second {
           position: absolute;
@@ -468,20 +487,24 @@ header {
           }
         }
         &.active {
-          // border-bottom: 2px solid rgba(143, 100, 72, 1);
-          border-bottom: 2px solid #fff;
+          
+          // border-bottom: 2px solid #fff;
           // color: #8f6448;
-          width: 84px;
+          width: 120px;
           a {
             color: #8f6448;
           }
           .orange {
             color: #906448;
           }
+          span{
+            border-bottom: 2px solid #fff;
+          }
         }
         &:hover {
           // border-bottom: 2px solid rgba(143, 100, 72, 1);
           color: #c29b73;
+          width: 120px;
           a {
             color: #fff;
           }
@@ -489,12 +512,16 @@ header {
             display: block;
             color: #fff;
           }
+          span{
+            width:84px;
+            // border-bottom:solid 2px #c29b73;
+          }
         }
       }
     }
     .login-box {
-      height: 100px;
-      line-height: 100px;
+      height: 80px;
+      line-height: 80px;
       cursor: pointer;
       text-align: center;
       color: $colorW;

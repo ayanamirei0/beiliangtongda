@@ -1,6 +1,8 @@
 import axios from 'axios'
 import Qs from 'qs'
 var root = process.env.API_HOST
+import router from '../router'
+import { Message } from 'element-ui'
 
 //请求拦截器
 axios.interceptors.request.use(function (config) {
@@ -12,14 +14,13 @@ axios.interceptors.request.use(function (config) {
 })
     // 响应拦截器
 axios.interceptors.response.use(function(response) {
-    if (response.data.returnCode === 2001) {
-        console.log('2001 - 登录失效 - 退出2001')
+    if (response.data.returnCode === 2001 || response.data.returnCode === 1111) {
         if (response.data.message != null && response.data.message.length > 0) {
-            this.$message.error(response.data.message);
+            Message.error(response.data.message);
         }
         sessionStorage.clear()
         localStorage.clear()
-        this.$router.replace("/login/pwdLogin")
+        router.replace("/login/pwdLogin")
     }
     return response
 }, function(error) {
@@ -44,8 +45,9 @@ export default function http(url = '', data = {}, type = 'POST') {
             })
         } else {
             let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
-            let headerParam = {"token": userInfo ? userInfo.token : '',
+            let headerParam = {"tokenId": userInfo ? userInfo.token : '',
                 "phone": userInfo ? userInfo.phone : ''};
+
             Promise = axios({
                 method: 'post',
                 url: url,

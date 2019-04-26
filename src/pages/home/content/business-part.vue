@@ -91,6 +91,7 @@ $color7: #cccccc;
 $color8: #ebebeb;
 $color9: #f8f8f8;
 $colorW: #ffffff;
+$color10: #ddd;
 img{
   transition: 0.3s all ease;
 }
@@ -111,7 +112,8 @@ img:hover {
     font-size: 24px;
     padding-top: 12px;
     color: $color6;
-    border-bottom: 1px solid $color8;
+    border-bottom: 1px solid $color10;
+    font-family: "宋体";
   }
 }
 .content {

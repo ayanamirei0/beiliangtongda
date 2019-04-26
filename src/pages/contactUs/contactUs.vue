@@ -58,7 +58,7 @@ import Footer from "components/Footer";
 	background: url("../../assets/images/about_banner.jpg") no-repeat center top;
 	width: 100%;
 	background-size: cover;
-	height: 600px;
+	height: 440px;
 }
 
 .about_cont {

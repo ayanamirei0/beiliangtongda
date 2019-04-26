@@ -1,24 +1,28 @@
 <template>
   <div class="warp">
     <Chart :isChartShow="isChartShow"></Chart>
-    <div
-      @click="openMap"
-      class="btn"
-      :style="{top: !isChartShow ? '120px' : windowHeight() + 120 + 'px'}"
-    >
-      <span>显示地图</span>
-      <i class="icon icon-open">&nbsp;</i>
-    </div>
+    
     <div class="header_content">
       <Header
         :currentIndex="currentIndex"
         :navColor="navColor"
         :isLogin="isLogin"
       ></Header>
+      <div class="sliderwrap">
         <Slider
           :dataImg="bannerDate"
           v-if="showIt"
         ></Slider>
+        <div
+          @click="openMap"
+          class="btn"
+          :style="{top: !isChartShow ? '120px' : windowHeight() + 120 + 'px'}"
+        >
+          <span>显示地图</span>
+          <i class="icon icon-open">&nbsp;</i>
+        </div>
+      </div>
+        
     </div>
     <div class="content">
       <HomeContent></HomeContent>
@@ -188,6 +192,10 @@ export default {
     background: url("../../assets/images/home/banner_default.jpg") no-repeat center
         center;
       background-size: 100% 100%;
+      .sliderwrap{
+        position:relative;
+        height:600px;
+      }
   }
   .content {
     flex: 1;
@@ -201,11 +209,11 @@ export default {
   height: 44px;
   line-height: 44px;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   top: 200px;
   left: 50%;
   margin-left: 550px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
   transition: 0.4s all ease;
   text-align: center;
   cursor: pointer;

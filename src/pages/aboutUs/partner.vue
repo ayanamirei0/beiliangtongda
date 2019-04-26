@@ -34,7 +34,7 @@ export default {
         cont:
           "嘉旭集团公司布局在粮食主产区东北和粮食主销区两广、海南。主要管理人员均有二十余年粮食贸易行业经验，对粮食产业理解深刻，能够在行业波动中精准抓住机会，优化资金布局，获得利润。作为国内专注于粮食贸易的大型集团公司，深耕粮贸行业6年，2018年年销售规模超过200万吨。"
       },
-      banner: require("../../assets/images/about/image4.png"),
+      banner: require("../../assets/images/about/image1.png"),
       currentIndex: 4,
       navColor: "white"
     };
@@ -50,14 +50,14 @@ export default {
     top;
   width: 100%;
   background-size: cover;
-  height: 384px;
+  height: 260px;
   text-align: center;
-  padding-top: 216px;
+  padding-top: 180px;
   -webkit-box-sizing: initial;
 }
 .partner_banner img {
-  width: 828px;
-  height: 211px;
+  width: 711px;
+  height: 166px;
 }
 
 .partner_cont {
